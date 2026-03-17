@@ -1,0 +1,156 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, Segoe UI, system-ui, -apple-system, sans-serif;
+  --bg: #eef2ff;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #4f46e5;
+  --accent-2: #0ea5e9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg), #fef9c3);
+  color: var(--text);
+}
+
+.app-shell {
+  margin: 2rem auto;
+  width: min(1100px, 94vw);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+}
+
+.panel,
+.chat-area {
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
+  padding: 1rem 1.2rem;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.6rem;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+.muted,
+.label {
+  color: var(--muted);
+}
+
+select,
+input,
+button {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-2);
+}
+
+.connector-list,
+.security-list {
+  margin: 0;
+  padding-left: 1rem;
+  line-height: 1.5;
+}
+
+.connector-list li {
+  margin: 0.25rem 0;
+}
+
+.chat-area {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 75vh;
+}
+
+.chat-area header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chat-area header button {
+  width: auto;
+}
+
+.chat-window {
+  margin: 1rem 0;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 0.8rem;
+  background: #f9fafb;
+}
+
+.message {
+  max-width: 80%;
+  margin: 0.5rem 0;
+  padding: 0.65rem 0.8rem;
+  border-radius: 12px;
+  white-space: pre-wrap;
+}
+
+.message.user {
+  margin-left: auto;
+  background: #dbeafe;
+}
+
+.message.agent {
+  background: #ede9fe;
+}
+
+.chat-form {
+  display: grid;
+  grid-template-columns: 1fr 130px;
+  gap: 0.6rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    margin: 1rem auto;
+  }
+
+  .chat-area {
+    min-height: 65vh;
+  }
+}
