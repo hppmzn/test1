@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+api/node_modules/
+api/dist/
+
+# Vite build output
+dist/
+
+# Environment / secrets
+.env
+.env.local
+api/local.settings.json
+
+# OS
+.DS_Store
+Thumbs.db
