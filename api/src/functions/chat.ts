@@ -6,11 +6,16 @@ export async function chatHandler(
 ): Promise<HttpResponseInit> {
   context.log('Chat function triggered');
 
-  // Parse request body
+  // Parse and validate request body
   let message = '';
   try {
-    const body = await request.json() as { message?: string };
-    message = body.message ?? '';
+    const raw = await request.json();
+    if (raw !== null && typeof raw === 'object' && !Array.isArray(raw)) {
+      const body = raw as Record<string, unknown>;
+      if (typeof body['message'] === 'string') {
+        message = body['message'];
+      }
+    }
   } catch {
     return {
       status: 400,
