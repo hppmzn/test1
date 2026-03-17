@@ -11,7 +11,7 @@ A simple, professional, user-friendly chatbot frontend designed as a deployment-
 
 ## Run locally
 
-Because this is a static app, you can open `/home/runner/work/test1/test1/index.html` directly in a browser, or use any local static server.
+Because this is a static app, you can open `index.html` directly in a browser, or use any local static server.
 
 ## Deploy to Azure Static Web Apps
 
